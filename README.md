@@ -14,10 +14,23 @@ In this example :
 - Received String from Native layer to Upper layer (App)
 - Send String from Application to native layer
 - Received String Array from Native to  Upper layer
+- More detail check [My Blog](saurabhsharma123k.blogspot.com/)
 
-Below is application screenshot. More detail check [My Blog](saurabhsharma123k.blogspot.com/)
+Below is application screenshot. 
 <a href="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_1.png">
 <img src="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_1.png" height="500" width="300" ></a>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
