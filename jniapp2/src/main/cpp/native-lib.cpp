@@ -31,10 +31,10 @@ Java_com_saurabh_jni_jniapp2_MainActivity_callback(JNIEnv *env, jobject jthis) {
     jmethodID printFloat = env->GetMethodID(thisClass, "printFloat", "(F)V");
     if (NULL == printFloat)
         return;
-    env->CallVoidMethod(jthis, printFloat, 5.221);
+    env->CallVoidMethod(jthis, printFloat, 5.22f);
 
     jmethodID staticPrintInt = env->GetStaticMethodID(thisClass, "printNum", "(I)V");
     if (NULL == staticPrintInt)
         return;
-    env->CallStaticVoidMethod(jthis, staticPrintInt, 17);
+    env->CallStaticVoidMethod(thisClass,staticPrintInt, 17);
 }

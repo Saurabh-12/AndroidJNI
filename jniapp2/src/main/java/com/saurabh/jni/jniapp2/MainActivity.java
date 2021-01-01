@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void callJavaMethodFromNative(View view) {
         int ii = getNumberFromCPP(false);
+        callback();
         Toast.makeText(this, "Received From Native: "+ii, Toast.LENGTH_SHORT).show();
     }
 
