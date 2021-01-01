@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 
+    static int si = 10;
+    String s = "Saurabh";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         int ii = getNumberFromCPP(false);
         callback();
         Toast.makeText(this, "Received From Native: "+ii, Toast.LENGTH_SHORT).show();
+        printSumOfArray();
+        Log.d(LOG_TAGS, "Variable Value before Native Call Int: " + si+" String: "+s);
+        accessJavaVariable();
+        Log.d(LOG_TAGS, "Variable Value after Native Call Int: " + si+" String: "+s);
     }
 
 
@@ -52,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAGS, "Got float from C++: " + i);
     }
 
+    public void printSumOfArray()
+    {
+        int arr[] = new int [11];
+        for (int i = 0; i < 11; i++)
+            arr[i] = i;
+        int sum = sumArray(arr);
+        Log.d(LOG_TAGS, "Got Array Sum from C++: " + sum);
+    }
+
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
@@ -59,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public native String stringFromJNI();
     public native void callback();
+    private native int sumArray(int arr[]);
+    private native void accessJavaVariable();
 
 
 }
