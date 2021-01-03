@@ -12,16 +12,17 @@ Java_com_saurabh_jni_jniapp2_MainActivity_stringFromJNI(
     return env->NewStringUTF(hello.c_str());
 }
 
-extern "C" JNIEXPORT jint JNICALL
-Java_com_saurabh_jni_jniapp2_MainActivity_getTheAnswer(JNIEnv *env, jobject thiz,jboolean bools)
+extern "C" JNIEXPORT void JNICALL
+Java_com_saurabh_jni_jniapp2_MainActivity_getTheAnswer(JNIEnv *env, jobject thiz)
 {
+    jboolean localBool = JNI_TRUE;
     // Find the Java class - provide package ('.' replaced to '/') and class name
     jclass jniTestClass = env->FindClass("com/saurabh/jni/jniapp2/MainActivity");
 
     // Find the Java method - provide parameters inside () and return value (see table below for an explanation of how to encode them)
     jmethodID getAnswerMethod = env->GetStaticMethodID(jniTestClass, "getNumberFromCPP", "(Z)I");
     // Calling the method
-    return (int)env->CallStaticIntMethod(jniTestClass, getAnswerMethod, (jboolean)bools);
+    env->CallStaticIntMethod(jniTestClass, getAnswerMethod, (jboolean)localBool);
 }
 
 extern "C" JNIEXPORT void JNICALL

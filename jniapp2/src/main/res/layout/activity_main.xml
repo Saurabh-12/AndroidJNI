@@ -1,29 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:id="@+id/SCROLLER_ID"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/sample_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/call_java_from_native_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="callJavaMethodFromNative"
-        app:layout_constraintTop_toBottomOf="@+id/sample_text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="Call_Java_Method_from_Native"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/sample_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/call_java_from_native_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="callJavaMethodFromNative"
+            app:layout_constraintTop_toBottomOf="@+id/sample_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAllCaps="false"
+            android:padding="5dp"
+            android:text="Call Java Variable and Method from Native"/>
+
+        <TextView
+            android:id="@+id/example_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/call_java_from_native_btn"
+            app:layout_constraintLeft_toLeftOf="@+id/call_java_from_native_btn"
+            app:layout_constraintRight_toRightOf="@+id/call_java_from_native_btn"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
