@@ -21,6 +21,27 @@ Below is application screenshot
 <a href="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_1.png">
 <img src="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_1.png" height="500" width="300" ></a>
 
+# 2. Android JNI Example 2
+In this example :
+- Call and set value for  POJO or Getter/setter class in Native(jni/c++)
+- Call and set value for below Java Static and instance Method in Native(jni/c++) :
+     - Boolean
+     - Int
+     - Float
+     - Array
+     - String
+- Access and set following Static and Instance variable value in Native(jni/c++): 
+       - Int
+       - String
+       - float
+- More detail check [My Blog](saurabhsharma123k.blogspot.com/)
+Below is application screenshot
+
+<a href="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_2.png">
+<img src="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_2.png" height="500" width="300" ></a>
+       
+
+     
 
 
 
