@@ -31,10 +31,12 @@ In this example :
      - Array
      - String
 - Access and set following Static and Instance variable value in Native(jni/c++): 
-       - Int
-       - String
-       - float
+     - Int
+     - String
+     - float
 - More detail check [My Blog](saurabhsharma123k.blogspot.com/)
+
+
 Below is application screenshot
 
 <a href="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_2.png">
