@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     static int si = 10;
     String s = "Saurabh";
     private String instanceField = "Instance Field";
+    private Dummy dummyF = new Dummy(333);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAGS, "Variable Value before Native Call Int: " + si+" String: "+s);
         accessJavaVariable();
         Log.d(LOG_TAGS, "Variable Value after Native Call Int: " + si+" String: "+s);
+
+        Log.d(LOG_TAGS, "Variable Value before Native Call String instanceField: " +instanceField);
+        AccessJavaInstanceField();
+        Log.d(LOG_TAGS, "Variable Value after Native Call String instanceField: " +instanceField);
     }
 
 
@@ -77,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     public native void callback();
     private native int sumArray(int arr[]);
     private native void accessJavaVariable();
+    private native void AccessJavaInstanceField();
 
 
 }

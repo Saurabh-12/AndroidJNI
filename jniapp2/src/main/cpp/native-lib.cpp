@@ -85,3 +85,37 @@ Java_com_saurabh_jni_jniapp2_MainActivity_accessJavaVariable(JNIEnv *env, jobjec
     jstr = env->NewStringUTF("SaurabhSharma123K");
     env->SetObjectField(obj, fid, jstr);
 }
+extern "C" JNIEXPORT void JNICALL
+Java_com_saurabh_jni_jniapp2_MainActivity_AccessJavaInstanceField(JNIEnv *env, jobject obj)
+{
+    jfieldID intFID, strFID, intArrFID, dummyFID;
+    jclass cls = env->GetObjectClass(obj);
+
+    strFID = env->GetFieldID(cls, "instanceField", "Ljava/lang/String;");
+    //get the string field and read the content
+    jobject astr = env->GetObjectField(obj, strFID);
+    const char* str = env->GetStringUTFChars(static_cast<jstring>(astr), NULL);
+    if (str == NULL) {
+        __android_log_print(ANDROID_LOG_INFO, APPNAME, "failed GetStringUTFChars");
+    }
+    __android_log_print(ANDROID_LOG_INFO, APPNAME, "strF: %s", str);
+    env->ReleaseStringUTFChars(static_cast<jstring>(astr), str);
+    //set the string field to a new string
+    jstring newStr = env->NewStringUTF("hello from native 2");
+    env->SetObjectField(obj, strFID, newStr);
+
+    dummyFID = env->GetFieldID(cls, "dummyF", "Lcom/saurabh/jni/jniapp2/Dummy;");
+    //get the Dummy object field
+    jobject adummy = env->GetObjectField(obj, dummyFID);
+    jclass dummyCls = env->FindClass("com/saurabh/jni/jniapp2/Dummy");
+    __android_log_print(ANDROID_LOG_INFO, APPNAME, "dummyF is instance of dummyCls: %d",
+            env->IsInstanceOf(adummy, dummyCls));
+    jfieldID dummyValueFID = env->GetFieldID(dummyCls, "value", "I");
+    jint dummyValue = env->GetIntField(adummy, dummyValueFID);
+    __android_log_print(ANDROID_LOG_INFO, APPNAME, "dummyF value: %d", dummyValue);
+    //set the Dummy object field to a newly created one
+    jmethodID dummyConstructor = env->GetMethodID(dummyCls, "<init>","(I)V");
+    jobject newDummy = env->NewObject(dummyCls, dummyConstructor, 200);
+    env->SetObjectField(obj, dummyFID, newDummy);
+
+}
