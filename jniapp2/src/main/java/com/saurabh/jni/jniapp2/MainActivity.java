@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     static int si = 10;
     String s = "Saurabh";
+    private String instanceField = "Instance Field";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -68,7 +68,8 @@ Java_com_saurabh_jni_jniapp2_MainActivity_accessJavaVariable(JNIEnv *env, jobjec
         return;
     }
     si = env->GetStaticIntField(cls, fid);
-    printf("  FieldAccess.Integer = %d\n", si);
+    //printf("  FieldAccess.Integer = %d\n", si);
+    __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "FieldAccess.Integer: %d",si);
     env->SetStaticIntField(cls, fid, 200);
 
     fid = env->GetFieldID(cls, "s", "Ljava/lang/String;");
@@ -77,7 +78,8 @@ Java_com_saurabh_jni_jniapp2_MainActivity_accessJavaVariable(JNIEnv *env, jobjec
     }
     jstr = static_cast<jstring>(env->GetObjectField(obj, fid));
     str = env->GetStringUTFChars(jstr, 0);
-    printf("  FieldAccess.String = \"%s\"\n", str);
+    //printf("  FieldAccess.String = \"%s\"\n", str);
+    __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "FieldAccess.String: %s",str);
     env->ReleaseStringUTFChars(jstr, str);
 
     jstr = env->NewStringUTF("SaurabhSharma123K");
