@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void NPETest() throws NullPointerException {
-        throw new NullPointerException("thrown in CatchThrow.callback");
+        throw new NullPointerException("Exception test result: "+"thrown in CatchThrow.callback");
     }
 
     private void callExceptionDemo() {
@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
             ExceptionDemo();
         } catch (RuntimeException e) {
             String msg = e.getMessage();
-            exceptionDemo.setText(msg);
+            exceptionDemo.setText("Exception test result: "+msg);
         }
     }
 
     private void callFatalErrorDemo() {
         FatalErrorDemo();
-        exceptionDemo.setText("after calling FatalErrorDemo");
+        exceptionDemo.setText("Exception test result: "+"after calling FatalErrorDemo");
     }
 
     /**

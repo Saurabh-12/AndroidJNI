@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="Hello World!"
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,9 +24,12 @@
         android:id="@+id/exception_detail_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Exception Example:\n 1. Handle Exception From Native\n
-        2.Exception catch by Native and return back to App\n
-        3. Fatal Exception from Native"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Exception Example:\n
+        1. Handle Exception From Native\n
+        2. Exception catch by Native and return back to App\n
+        3. Fatal Exception from Native\n"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,14 +38,16 @@
 
     <TextView
         android:id="@+id/exception_demo_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="exception result"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Exception test result: "
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/exception_demo_text"
-        app:layout_constraintBottom_toBottomOf="@+id/exception_detail_text" />
+        app:layout_constraintTop_toBottomOf="@+id/exception_detail_text"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
