@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 
+    private TextView exceptionDemo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,14 +21,31 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
+        exceptionDemo = findViewById(R.id.exception_demo_text);
         tv.setText(stringFromJNI());
 
-        handleExceptionFromNative();
+        //handleExceptionFromNative();
+       callExceptionDemo();
+        //callFatalErrorDemo();
 
     }
 
     private void NPETest() throws NullPointerException {
         throw new NullPointerException("thrown in CatchThrow.callback");
+    }
+
+    private void callExceptionDemo() {
+        try {
+            ExceptionDemo();
+        } catch (RuntimeException e) {
+            String msg = e.getMessage();
+            exceptionDemo.setText(msg);
+        }
+    }
+
+    private void callFatalErrorDemo() {
+        FatalErrorDemo();
+        exceptionDemo.setText("after calling FatalErrorDemo");
     }
 
     /**
@@ -35,4 +54,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public native String stringFromJNI();
     private native void handleExceptionFromNative() throws IllegalArgumentException;
+    private native void ExceptionDemo();
+    private native void FatalErrorDemo();
 }
