@@ -36,13 +36,21 @@ In this example :
      - float
 - More detail check [My Blog](saurabhsharma123k.blogspot.com/)
 
-
 Below is application screenshot
 
 <a href="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_2.png">
 <img src="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_2.png" height="500" width="300" ></a>
        
+# 3. Android JNI Example 3 : Handling Exception
+In this example :
+- Handle Java/App exception from native(jni)
+- Catch java/App exception in native and return back it to App
+- Example of Fatal exception in native 
 
+Below is application screenshot
+
+<a href="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_3.png">
+<img src="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_3.png" height="500" width="300" ></a>
      
 
 
