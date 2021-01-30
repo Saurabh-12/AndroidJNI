@@ -50,7 +50,7 @@ In this example :
 Below is application screenshot
 
 <a href="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_3.png">
-<img src="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_3.png" height="500" width="300" ></a>
+<img src="https://github.com/Saurabh-12/AndroidJNI/blob/master/JNIApp_3.png" height="500" width="600" ></a>
      
 
 
